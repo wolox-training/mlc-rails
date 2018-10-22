@@ -19,11 +19,12 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  host: localhost
-  port: 5432
+  host: <%= ENV.fetch('DB_USERNAME', 'localhost') %>
+  port: <%= ENV.fetch('DB_PORT', 5432) %>
+
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: 'wbooks-api'
-  password: 'wbooks-api'
+  username: <%= ENV.fetch('DB_USERNAME', 'wbooks-api') %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'wbooks-api') %>
 
 development:
   <<: *default
@@ -84,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: wbooks-api_production
-
- # password: <%= ENV['WBOOKS_DATABASE_PASSWORD'] %> # era el original
+  url: <%= ENV['DATABASE_URL'] %>
