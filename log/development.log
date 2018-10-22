@@ -1,0 +1,41 @@
+  [1m[35m (364.6ms)[0m  [1m[35mCREATE DATABASE "wbooks-api_development" ENCODING = 'unicode'[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (251.8ms)[0m  [1m[35mCREATE DATABASE "wbooks-api_test" ENCODING = 'unicode'[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (113.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wbooks-api_development"[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (112.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "wbooks-api_test"[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (252.5ms)[0m  [1m[35mCREATE DATABASE "wbooks-api_development" ENCODING = 'unicode'[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (255.4ms)[0m  [1m[35mCREATE DATABASE "wbooks-api_test" ENCODING = 'unicode'[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5116863435431375565)[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-19 20:33:26.233515"], ["updated_at", "2018-10-19 20:33:26.233515"]]
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5116863435431375565)[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mcole/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-10-19 17:35:13 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/mcole/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mcole/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
