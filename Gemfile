@@ -26,11 +26,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# 
+gem 'rubocop', '~> 0.59.2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-#
-gem 'rubocop', '~> 0.59.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -58,6 +58,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
