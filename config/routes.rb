@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  devise_for :userss
+  devise_for :users
 end
