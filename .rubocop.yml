@@ -1,6 +1,6 @@
 Documentation:
   Enabled: false
 LineLength:
-  Max: 170
+  Max: 90
 Style/FrozenStringLiteralComment:
   Enabled: false
