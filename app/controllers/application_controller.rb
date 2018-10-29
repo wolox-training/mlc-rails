@@ -5,5 +5,4 @@ class ApplicationController < ActionController::Base
   def verify_api
     params[:controller].split('/')[0] != 'devise_token_auth'
   end
-
 end

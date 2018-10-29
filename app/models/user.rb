@@ -5,5 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
   validates :first_name, :last_name, presence: true
-
 end
