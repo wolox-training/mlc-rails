@@ -1,20 +1,11 @@
 class BooksController < ApplicationController
-  include Wor::Paginate
-
   def index
     @books = Book.all
-    # render_paginated Book
-
-    respond_to do |format|
-      format.json { render json: @books }
-    end
+    render_paginated @books, each_serializer: BookSerializer
   end
 
   def show
     @book = Book.find(params[:id])
-
-    respond_to do |format|
-      format.json { render json: @book }
-    end
+    render json: @book, serializer: BookSerializer
   end
 end
