@@ -21,7 +21,5 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       ## Tokens
       t.json :tokens
     end
-
-    # add_index :users, :unlock_token,       unique: true
   end
 end
