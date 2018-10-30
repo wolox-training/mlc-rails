@@ -45,6 +45,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'rspec-rails', '~> 3.8'
+  gem 'faker', '~> 1.9.1'
 end
 
 group :development do
@@ -63,7 +64,6 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'database_cleaner'
-  gem 'faker', '~> 1.9.1'
   gem 'rails-controller-testing' # If you are using Rails 5.x
   gem 'shoulda-matchers', '4.0.0.rc1'
 end
