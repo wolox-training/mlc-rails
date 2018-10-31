@@ -36,7 +36,6 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   Dir['./spec/support/*.rb'].sort.each { |f| require f }
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.shared_context_metadata_behavior = :apply_to_host_groups
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

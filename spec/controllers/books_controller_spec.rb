@@ -18,7 +18,7 @@ describe BooksController do
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
 
-      it 'responds with 200 status' do
+      it 'response with OK status' do
         expect(response).to have_http_status(:ok)
       end
     end
@@ -38,7 +38,7 @@ describe BooksController do
         ).to_json
       end
 
-      it 'responds with 200 status' do
+      it 'response with OK status' do
         expect(response).to have_http_status(:ok)
       end
     end
