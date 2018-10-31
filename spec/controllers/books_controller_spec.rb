@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 describe BooksController do
-
-include_context 'Authenticated User'
+  include_context 'Authenticated User'
 
   describe 'GET #index' do
     context 'When fetching all the books' do
@@ -40,7 +39,7 @@ include_context 'Authenticated User'
       end
 
       it 'responds with 200 status' do
-       expect(response).to have_http_status(:ok)
+        expect(response).to have_http_status(:ok)
       end
     end
   end
