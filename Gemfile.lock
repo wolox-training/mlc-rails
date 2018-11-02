@@ -81,7 +81,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.0)
+    concurrent-ruby (1.0.5)
     crass (1.0.4)
     database_cleaner (1.7.0)
     devise (4.5.0)
@@ -276,6 +276,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  concurrent-ruby (~> 1.0.5)
   database_cleaner
   devise (~> 4.5.0)
   devise_token_auth (~> 1.0.0)
