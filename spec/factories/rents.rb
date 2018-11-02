@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :rent do
-    user { nil }
-    book { nil }
-    start_date { 'MyString' }
-    end_date { 'MyString' }
+    user
+    book
+    start_date { Faker::Date.between(-20.days.from_now, -2.days.from_now) }
+    end_date { Faker::Date.between(start_date, -1.day.from_now) }
   end
 end
