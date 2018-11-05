@@ -15,7 +15,7 @@ describe BooksController do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
           books, each_serializer: BookSerializer
         ).to_json
-        expect(response.body.to_json) =~ JSON.parse(expected)
+        expect(response_body.to_json) =~ JSON.parse(expected)
       end
 
       it 'response with OK status' do
@@ -33,7 +33,7 @@ describe BooksController do
       end
 
       it 'responses with the book json' do
-        expect(response.body.to_json) =~ BookSerializer.new(
+        expect(response_body.to_json) =~ BookSerializer.new(
           book, root: false
         ).to_json
       end
