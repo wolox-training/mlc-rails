@@ -2,13 +2,16 @@ class RentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @rents = Rent.all
-    render_paginated @rents
+    render_paginated Rent.all
   end
 
   def create
     rent = Rent.new(rent_params)
-    render json: rent, status: :created
+    if rent.save
+      render json: rent, status: :created
+    else
+      render json: rent.errors, status: :unprocessable_entity
+    end
   end
 
   private
