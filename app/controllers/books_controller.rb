@@ -1,11 +1,9 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
-    render_paginated @books, each_serializer: BookSerializer
+    render_paginated Book.all
   end
 
   def show
-    @book = Book.find(params[:id])
-    render json: @book, serializer: BookSerializer
+    render json: Book.find(params[:id])
   end
 end
