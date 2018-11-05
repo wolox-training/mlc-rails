@@ -26,7 +26,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-#
+# 
+gem 'concurrent-ruby', '~> 1.0.5'
+
 gem 'devise', '~> 4.5.0'
 gem 'devise_token_auth', '~> 1.0.0'
 gem 'rubocop', '~> 0.59.2'
