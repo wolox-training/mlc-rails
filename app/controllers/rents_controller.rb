@@ -9,6 +9,9 @@ class RentsController < ApplicationController
     rent = Rent.new(rent_params)
     if rent.save
       render json: rent, status: :created
+      # HardWorker.perform_async(rent_params.start_date, rent_params.end_date)
+      MailWorker.perform_async('2018-08-09', '2018-08-12')
+      UserMailer.welcome_email(rent_params).deliver_now
     else
       render json: rent.errors, status: :unprocessable_entity
     end
