@@ -34,3 +34,4 @@
 /test/*
 
 .env
+.byebug_history

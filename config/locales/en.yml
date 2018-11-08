@@ -30,4 +30,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  rent_email:
+    greetings: 'Hello'
+    start_date: 'Start date'
+    end_date: 'End date'
+    book_details: 'Book details'
+    title: 'Title'
+    author: 'Author'
+    genre: 'Genre'
+    publisher: 'Publisher'
+    year: 'Year'
+    cover_image: 'Cover'
+    new_rent_email_subject: 'New rent information'

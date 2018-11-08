@@ -1,0 +1,13 @@
+es:
+  send_mail:
+    greetings: 'Hola'
+    start_date: 'Fecha de inicio'
+    end_date: 'Fecha de fin'
+    book_details: 'Detalles del libro'
+    title: 'Título'
+    author: 'Autor'
+    genre: 'Género'
+    publisher: 'Editorial'
+    year: 'Año'
+    cover_image: 'Portada'
+    new_rent_email_subject: 'Information del nuevo alquiler'

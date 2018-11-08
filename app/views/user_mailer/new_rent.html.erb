@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+    <body>
+        <h2 style="color: #2e6c80;">Welcome to WBooks!</h2>
+        <p>Hello, <%= @user.first_name %>! You have created a new rent, valid since <%= @rent.start_date %> until <%= @rent.end_date %>.</p>
+        <p>These are the details of the book you have rented:</p>
+
+        <table style="border: 1px solid black">
+            <tbody>
+            <tr>
+                <td><strong>Title</strong></td>
+                <td><%= @book.title %></td>
+            </tr>
+            <tr>
+                <td><strong>Author</strong></td>
+                <td><%= @book.author %></td>
+            </tr>
+            <tr>
+                <td><strong>Genre</strong></td>
+                <td><%= @book.genre %></td>
+            </tr>
+            <tr>
+                <td><strong>Publisher</strong></td>
+                <td><%= @book.publisher %></td>
+            </tr>
+            <tr>
+                <td><strong>Year</strong></td>
+                <td><%= @book.year %></td>
+            </tr>
+            <tr>
+                <td><strong>Cover</strong></td>
+                <td><%= @book.cover_image %></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>We hope you enjoy it!</p>
+        <p>Greetings, the WBooks team.</p>
+    </body>
+</html>
