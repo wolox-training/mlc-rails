@@ -31,14 +31,17 @@
 
 en:
   rent_email:
-    greetings: 'Hello'
-    start_date: 'Start date'
-    end_date: 'End date'
-    book_details: 'Book details'
+    new_rent_subject: 'New rent information'
+    hello: 'Hello'
+    new_rent: 'You have created a new rent'
+    start_date: 'valid since'
+    end_date: 'until'
+    book_details: 'These are the details of the book you have rented:'
     title: 'Title'
     author: 'Author'
     genre: 'Genre'
     publisher: 'Publisher'
     year: 'Year'
     cover_image: 'Cover'
-    new_rent_email_subject: 'New rent information'
+    enjoy_message: 'We hope you enjoy it!'
+    wbooks_greetings: 'Greetings, the WBooks team.'
