@@ -9,7 +9,7 @@ class RentsController < ApiController
   def create
     rent = Rent.new(rent_params)
     if rent.save
-      UserMailer.new_rent(rent.id).deliver_now
+      UserMailer.new_rent(rent.id).deliver_later
       render json: rent, status: :created
     else
       render json: rent.errors, status: :unprocessable_entity
