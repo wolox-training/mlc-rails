@@ -7,5 +7,4 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :locale, presence: true
   has_many :rents, dependent: :destroy
   has_many :book_suggestions, dependent: :destroy
-
 end
