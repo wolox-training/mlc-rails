@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :book_suggestion do
-    synopsis { 'MyString' }
-    price { 1.5 }
-    author { 'MyString' }
-    title { 'MyString' }
-    link { 'MyString' }
-    publisher { 'MyString' }
-    year { 'MyString' }
-    user { nil }
+    synopsis    { Faker::Lorem.sentence }
+    price       { Faker::Number.number(2) }
+    link        { Faker::Internet.url }
+    author      { Faker::Book.author }
+    title       { Faker::Book.title }
+    publisher   { Faker::Book.publisher }
+    year        { Faker::Date.backward(25).year }
+    user        { create(:user) }
   end
 end
