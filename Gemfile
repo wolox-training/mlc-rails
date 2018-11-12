@@ -34,7 +34,8 @@ gem 'devise_token_auth', '~> 1.0.0'
 gem 'rubocop', '~> 0.59.2'
 gem 'wor-paginate', '~> 0.1.4'
 gem 'active_model_serializers', '~> 0.10.0'
-
+gem 'sidekiq', '~> 5.2.2'
+gem 'sinatra', '~> 2.0.4'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -50,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'rspec-rails', '~> 3.8'
   gem 'faker', '~> 1.9.1'
+  gem 'dotenv-rails', '~> 2.5.0'
 end
 
 group :development do
