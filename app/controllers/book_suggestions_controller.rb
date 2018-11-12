@@ -1,5 +1,4 @@
 class BookSuggestionsController < ApiController
-  before_action :set_locale
 
   def create
     book_suggestion = BookSuggestion.new(book_suggestion_params)
