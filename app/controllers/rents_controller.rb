@@ -1,12 +1,16 @@
-class RentsController < ApplicationController
+class RentsController < ApiController
   before_action :authenticate_user!
+  before_action :set_locale
 
   def index
-    render_paginated Rent.all
+    rents = Rent.all
+    authorize rents
+    render_paginated rents
   end
 
   def create
     rent = Rent.new(rent_params)
+    authorize rent
     if rent.save
       UserMailer.new_rent(rent.id).deliver_later
       render json: rent, status: :created

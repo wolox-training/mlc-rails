@@ -1,4 +1,4 @@
-class BooksController < ApplicationController
+class BooksController < ApiController
   def index
     render_paginated Book.all
   end
