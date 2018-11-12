@@ -1,5 +1,4 @@
 class BookSuggestionsController < ApiController
-
   def create
     book_suggestion = BookSuggestion.new(book_suggestion_params)
     if book_suggestion.save
