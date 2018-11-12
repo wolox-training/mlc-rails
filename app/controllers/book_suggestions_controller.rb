@@ -13,6 +13,7 @@ class BookSuggestionsController < ApiController
   private
 
   def book_suggestion_params
-    params.require(:book_suggestion).permit(:user_id, :synopsis, :price, :author, :title, :url, :publisher, :year)
+    params.require(:book_suggestion)
+          .permit(:user_id, :synopsis, :price, :author, :title, :url, :publisher, :year)
   end
 end
