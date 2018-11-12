@@ -3,7 +3,7 @@
     <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
     <body>
         <h2 style="color: #2e6c80;">Welcome to WBooks!</h2>
-        <p><%= t('rent_email.hello') %>, <%= @user.first_name %>! <%= t('rent_email.new_rent') %>, <%= t('rent_email.start_date') %> <%= @rent.start_date %> <%= t('rent_email.end_date') %> <%= @rent.end_date %>.</p>
+        <p><%= t('rent_email.hello') %>, <%= @user.first_name %> <%= @user.last_name %>! <%= t('rent_email.new_rent') %>, <%= t('rent_email.start_date') %> <%= @rent.start_date %> <%= t('rent_email.end_date') %> <%= @rent.end_date %>.</p>
         <p><%= t('rent_email.book_details') %></p>
 
         <table style="border: 1px solid black">
