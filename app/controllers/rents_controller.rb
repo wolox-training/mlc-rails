@@ -3,7 +3,7 @@ class RentsController < ApiController
   before_action :set_locale
 
   def index
-    rents = Rent.all
+    rents = Rent.where(user: current_user)
     authorize rents
     render_paginated rents
   end
