@@ -4,42 +4,36 @@ describe BookSuggestionsController do
   describe 'POST #create' do
     context('when user is authenticated') do
       include_context 'Authenticated User'
-      context 'and creating a valid book suggestion' do
-        let!(:book_suggestion_attributes) { attributes_for(:book_suggestion, user: user) }
-        # it 'creates a new book suggestion' do
-        #   expect do
-        #     post :create, params: { id: user.id, book_suggestion: book_suggestion_attributes }
-        #   end.to change(BookSuggestion, :count).by(1)
-        # end
 
-        # it 'responds with OK status' do
-        #   post :create, params: { id: user.id, book_suggestion: book_suggestion_attributes }
-        #   expect(response).to have_http_status(:created)
-        # end
+      context 'and creating a valid book suggestion' do
+        subject(:book_s) { build(:book_suggestion, user: user) }
+        let(:http_request) { post :create, params: { book_suggestion: book_s.attributes } }
+
+        it 'creates a new book suggestion' do
+          expect { http_request }.to change { BookSuggestion.count }.by(1)
+        end
+
+        it 'responds with OK status' do
+          http_request
+          expect(response).to have_http_status(:created)
+        end
 
         it 'sets user id value' do
-          post :create, params: { id: user.id, book_suggestion: book_suggestion_attributes }
+          http_request
           expect(response_body['user_id']) =~ user.id
         end
       end
 
       context 'and creating an invalid book suggestion' do
-        let!(:book_suggestion_attributes) { attributes_for(:book_suggestion, user: user) }
-        before do
-          post :create, params: { id: user.id, book_suggestion: book_suggestion_attributes }
+        subject(:book_s) { build(:book_suggestion, user: nil) }
+        let(:http_request) { post :create, params: { book_suggestion: book_s.attributes } }
+
+        it 'doesn\'t create a new book suggestion' do
+          expect { http_request }.to change { BookSuggestion.count }.by(0)
         end
 
-        # it 'doesn\'t create a new book suggestion' do
-        #   expect do
-        #     post :create, params: { id: user.id, book_suggestion: book_suggestion_attributes }
-        #   end.to change(BookSuggestion, :count).by(0)
-        # end
-
-        # it 'returns error messages' do
-        #   expect(response_body['error']).to be_present
-        # end
-
         it 'responds with error status' do
+          http_request
           expect(response).to have_http_status(:unprocessable_entity)
         end
       end
@@ -47,41 +41,34 @@ describe BookSuggestionsController do
 
     context 'when user is not authenticated' do
       context 'and creating a valid book suggestion' do
-        let!(:book_suggestion_attributes) { attributes_for(:book_suggestion) }
-        # it 'creates a new book suggestion' do
-        #   expect do
-        #     post :create, params: { book_suggestion: book_suggestion_attributes }
-        #   end.to change(BookSuggestion, :count).by(1)
-        # end
+        subject(:book_s) { build(:book_suggestion) }
+        let(:http_request) { post :create, params: { book_suggestion: book_s.attributes } }
 
-        # it 'responds with OK status' do
-        #   post :create, params: { id: user.id, book_suggestion: book_suggestion_attributes }
-        #   expect(response).to have_http_status(:created)
-        # end
+        it 'creates a new book suggestion' do
+          expect { http_request }.to change { BookSuggestion.count }.by(1)
+        end
+
+        it 'responds with OK status' do
+          http_request
+          expect(response).to have_http_status(:created)
+        end
 
         it 'sets user id to nil' do
-          post :create, params: { book_suggestion: book_suggestion_attributes }
+          http_request
           expect(response_body['user_id']) =~ nil
         end
       end
 
       context 'and creating an invalid book suggestion' do
-        let!(:book_suggestion_attributes) { attributes_for(:book_suggestion) }
-        before do
-          post :create, params: { book_suggestion: book_suggestion_attributes }
+        subject(:book_s) { build(:book_suggestion, user: nil) }
+        let(:http_request) { post :create, params: { book_suggestion: book_s.attributes } }
+
+        it 'doesn\'t create a new book suggestion' do
+          expect { http_request }.to change { BookSuggestion.count }.by(0)
         end
 
-        # it 'doesn\'t create a new book suggestion' do
-        #   expect do
-        #     post :create, params: { book_suggestion: nil }
-        #   end.to change(BookSuggestion, :count).by(0)
-        # end
-
-        # it 'returns error messages' do
-        #   expect(response_body['error']).to be_present
-        # end
-
         it 'responds with error status' do
+          http_request
           expect(response).to have_http_status(:unprocessable_entity)
         end
       end
