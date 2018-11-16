@@ -38,6 +38,7 @@ gem 'sidekiq', '~> 5.2.2'
 gem 'sinatra', '~> 2.0.4'
 gem 'rails-i18n', '~> 5.1.2'
 gem 'activeadmin', '~> 1.3.1'
+gem 'pundit', '~> 2.0.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
