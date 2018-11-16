@@ -3,39 +3,39 @@
     <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
     <body>
         <h2 style="color: #2e6c80;">Welcome to WBooks!</h2>
-        <p>Hello, <%= @user.first_name %> <%= @user.last_name %>! You have created a new rent, valid since <%= @rent.start_date %> until <%= @rent.end_date %>.</p>
-        <p>These are the details of the book you have rented:</p>
+        <p><%= t('rent_email.hello') %>, <%= @user.first_name %> <%= @user.last_name %>! <%= t('rent_email.new_rent') %>, <%= t('rent_email.start_date') %> <%= @rent.start_date %> <%= t('rent_email.end_date') %> <%= @rent.end_date %>.</p>
+        <p><%= t('rent_email.book_details') %></p>
 
         <table style="border: 1px solid black">
             <tbody>
             <tr>
-                <td><strong>Title</strong></td>
+                <td><strong><%= t('rent_email.title') %></strong></td>
                 <td><%= @book.title %></td>
             </tr>
             <tr>
-                <td><strong>Author</strong></td>
+                <td><strong><%= t('rent_email.author') %></strong></td>
                 <td><%= @book.author %></td>
             </tr>
             <tr>
-                <td><strong>Genre</strong></td>
+                <td><strong><%= t('rent_email.genre') %></strong></td>
                 <td><%= @book.genre %></td>
             </tr>
             <tr>
-                <td><strong>Publisher</strong></td>
+                <td><strong><%= t('rent_email.publisher') %></strong></td>
                 <td><%= @book.publisher %></td>
             </tr>
             <tr>
-                <td><strong>Year</strong></td>
+                <td><strong><%= t('rent_email.year') %></strong></td>
                 <td><%= @book.year %></td>
             </tr>
             <tr>
-                <td><strong>Cover</strong></td>
+                <td><strong><%= t('rent_email.cover_image') %></strong></td>
                 <td><%= @book.cover_image %></td>
             </tr>
             </tbody>
         </table>
 
-        <p>We hope you enjoy it!</p>
-        <p>Greetings, the WBooks team.</p>
+        <p><%= t('rent_email.enjoy_message') %></p>
+        <p><%= t('rent_email.wbooks_greetings') %></p>
     </body>
 </html>

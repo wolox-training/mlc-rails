@@ -36,6 +36,8 @@ gem 'wor-paginate', '~> 0.1.4'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'sidekiq', '~> 5.2.2'
 gem 'sinatra', '~> 2.0.4'
+gem 'rails-i18n', '~> 5.1.2'
+gem 'activeadmin', '~> 1.3.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

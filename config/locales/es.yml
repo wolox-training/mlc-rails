@@ -1,0 +1,16 @@
+es:
+  rent_email:
+    new_rent_subject: 'Information del nuevo alquiler'
+    hello: 'Hola'
+    new_rent: 'Usted ha creado un nuevo alquiler'
+    start_date: 'válido desde'
+    end_date: 'hasta'
+    book_details: 'Estos son los detalles del libro que ha alquilado:'
+    title: 'Título'
+    author: 'Autor'
+    genre: 'Género'
+    publisher: 'Editorial'
+    year: 'Año'
+    cover_image: 'Portada'
+    enjoy_message: 'Esperamos que lo disfrutes!'
+    wbooks_greetings: 'Saludos del equipo de WBooks.'

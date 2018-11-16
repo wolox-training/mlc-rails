@@ -1,5 +1,6 @@
-class RentsController < ApplicationController
+class RentsController < ApiController
   before_action :authenticate_user!
+  before_action :set_locale
 
   def index
     render_paginated Rent.all
