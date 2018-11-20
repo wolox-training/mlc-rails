@@ -1,5 +1,4 @@
 class BooksController < ApiController
-  # require 'OpenLibraryService'
   def index
     render_paginated Book.all
   end

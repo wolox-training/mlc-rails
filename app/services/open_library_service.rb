@@ -1,7 +1,6 @@
 class OpenLibraryService
   include HTTParty
   base_uri 'https://openlibrary.org'
-  attr_reader :options
 
   def initialize(isbn)
     @isbn = isbn
@@ -10,6 +9,7 @@ class OpenLibraryService
 
   def book_info
     raise 'Error fetching data from OpenLibrary API' if retrieve_data.code.to_i != 200
+
     format_response(retrieve_data.parsed_response)
   end
 
