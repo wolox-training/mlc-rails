@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+    <body>
+        <h2 style="color: #2e6c80;"><%= t('rent_email.end_of_rent_title') %></h2>
+        <p><%= t('rent_email.hello') %>, <%= @user.first_name %> <%= @user.last_name %>! <%= t('rent_email.end_of_rent_message') %>, <%= t('rent_email.start_date') %> <%= @rent.start_date %> <%= t('rent_email.end_date') %> <%= @rent.end_date %>.</p>
+        <p><%= t('rent_email.book_details') %></p>
+
+        <table style="border: 1px solid black">
+            <tbody>
+            <tr>
+                <td><strong><%= t('rent_email.title') %></strong></td>
+                <td><%= @book.title %></td>
+            </tr>
+            <tr>
+                <td><strong><%= t('rent_email.author') %></strong></td>
+                <td><%= @book.author %></td>
+            </tr>
+            <tr>
+                <td><strong><%= t('rent_email.genre') %></strong></td>
+                <td><%= @book.genre %></td>
+            </tr>
+            <tr>
+                <td><strong><%= t('rent_email.publisher') %></strong></td>
+                <td><%= @book.publisher %></td>
+            </tr>
+            <tr>
+                <td><strong><%= t('rent_email.year') %></strong></td>
+                <td><%= @book.year %></td>
+            </tr>
+            <tr>
+                <td><strong><%= t('rent_email.cover_image') %></strong></td>
+                <td><%= @book.cover_image %></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p><%= t('rent_email.wbooks_greetings') %></p>
+    </body>
+</html>

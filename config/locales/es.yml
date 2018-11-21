@@ -14,3 +14,7 @@ es:
     cover_image: 'Portada'
     enjoy_message: 'Esperamos que lo disfrutes!'
     wbooks_greetings: 'Saludos del equipo de WBooks.'
+    end_of_rent_subject: 'Su alquiler ha vencido.'
+    end_of_rent_title: 'Información de fin de alquiler'
+    end_of_rent_message:
+        'Queremos informarle que hoy es el último día para devolver el libro'

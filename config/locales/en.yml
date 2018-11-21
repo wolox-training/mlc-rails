@@ -45,3 +45,7 @@ en:
     cover_image: 'Cover'
     enjoy_message: 'We hope you enjoy it!'
     wbooks_greetings: 'Greetings, the WBooks team.'
+    end_of_rent_subject: 'Your rent has expired'
+    end_of_rent_title: 'Rent expiry information'
+    end_of_rent_message:
+        'We want to inform you that today is the last day to return the book'

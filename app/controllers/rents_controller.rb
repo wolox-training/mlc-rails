@@ -20,7 +20,6 @@ class RentsController < ApiController
   end
 
   # def end_of_rent
-
   #   if rent.end_date
   #     UserMailer.end_of_rent(rent.id).deliver_now
   #   end
