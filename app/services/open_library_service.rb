@@ -4,15 +4,12 @@ class OpenLibraryService
 
   def initialize(isbn)
     @isbn = isbn
-    @uri = "/api/books?bibkeys=ISBN:#{@isbn}&format=json&jscmd=data"
-    # @uri = "/api/books"
-    # isbn = "ISBN:#{@isbn}"
-    # @options = {
-    #   'bibkey': isbn,
-    #   'format': 'json',
-    #   'jscmd': 'data'
-    # }
-    # byebug
+    @uri = "/api/books"
+    @options = {
+      'bibkeys': "ISBN:#{@isbn}",
+      'format': 'json',
+      'jscmd': 'data'
+    }
   end
 
   def book_info
@@ -24,9 +21,7 @@ class OpenLibraryService
   private
 
   def retrieve_data
-    self.class.get(@uri)
-    # self.class.get(@uri, query: @options)
-    # byebug
+    self.class.get(@uri, query: @options)
   end
 
   def format_response(response)
@@ -39,4 +34,10 @@ class OpenLibraryService
       authors: response['authors'].map { |data| data['name'] }
     }
   end
+
+  query_string_normalizer proc { |query|
+    query.map do |key, value|
+      [value].flatten.map {|v| "#{key}=#{v}"}.join('&')
+    end.join('&')
+  }
 end
