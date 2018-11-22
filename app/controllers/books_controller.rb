@@ -7,7 +7,7 @@ class BooksController < ApiController
     render json: Book.find(params[:id])
   end
 
-  def external_api_get
+  def open_library_book
     isbn = params[:isbn]
     render json: OpenLibraryService.new(isbn).book_info, status: :ok
   rescue StandardError => e

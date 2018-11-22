@@ -5,6 +5,14 @@ class OpenLibraryService
   def initialize(isbn)
     @isbn = isbn
     @uri = "/api/books?bibkeys=ISBN:#{@isbn}&format=json&jscmd=data"
+    # @uri = "/api/books"
+    # isbn = "ISBN:#{@isbn}"
+    # @options = {
+    #   'bibkey': isbn,
+    #   'format': 'json',
+    #   'jscmd': 'data'
+    # }
+    # byebug
   end
 
   def book_info
@@ -17,6 +25,8 @@ class OpenLibraryService
 
   def retrieve_data
     self.class.get(@uri)
+    # self.class.get(@uri, query: @options)
+    # byebug
   end
 
   def format_response(response)
