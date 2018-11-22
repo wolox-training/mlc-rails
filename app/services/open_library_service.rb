@@ -4,7 +4,7 @@ class OpenLibraryService
 
   def initialize(isbn)
     @isbn = isbn
-    @uri = "/api/books"
+    @uri = '/api/books'
     @options = {
       'bibkeys': "ISBN:#{@isbn}",
       'format': 'json',
@@ -37,7 +37,7 @@ class OpenLibraryService
 
   query_string_normalizer proc { |query|
     query.map do |key, value|
-      [value].flatten.map {|v| "#{key}=#{v}"}.join('&')
+      [value].flatten.map { |v| "#{key}=#{v}" }.join('&')
     end.join('&')
   }
 end

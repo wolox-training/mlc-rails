@@ -5,4 +5,6 @@ LineLength:
 Style/FrozenStringLiteralComment:
   Enabled: false
 Metrics/BlockLength:
-  Enabled: False
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
