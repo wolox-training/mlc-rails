@@ -6,7 +6,7 @@ describe BookSuggestionsController do
       include_context 'Authenticated User'
 
       context 'and creating a valid book suggestion' do
-        let(:book_s) { build(:book_suggestion, user: user) }
+        let(:book_s) { build(:book_suggestion, user: current_user) }
         let(:http_request) { post :create, params: { book_suggestion: book_s.attributes } }
 
         it 'creates a new book suggestion' do
@@ -20,12 +20,12 @@ describe BookSuggestionsController do
 
         it 'sets user id value' do
           http_request
-          expect(response_body['user_id']).to eql(user.id)
+          expect(response_body['user_id']).to eql(current_user.id)
         end
       end
 
       context 'and creating an invalid book suggestion' do
-        let(:book_s) { build(:book_suggestion, user: user, author: nil) }
+        let(:book_s) { build(:book_suggestion, user: current_user, author: nil) }
         let(:http_request) { post :create, params: { book_suggestion: book_s.attributes } }
 
         it 'doesn\'t create a new book suggestion' do
