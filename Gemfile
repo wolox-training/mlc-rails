@@ -39,7 +39,7 @@ gem 'sinatra', '~> 2.0.4'
 gem 'rails-i18n', '~> 5.1.2'
 gem 'activeadmin', '~> 1.3.1'
 gem 'pundit', '~> 2.0.0'
-gem 'httparty'
+gem 'httparty', '~> 0.16.3'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

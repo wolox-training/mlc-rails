@@ -13,7 +13,7 @@ class OpenLibraryService
   end
 
   def book_info
-    raise 'Error fetching data from OpenLibrary API' if retrieve_data.code.to_i != 200
+    raise 'Error fetching data from OpenLibrary.' unless retrieve_data.code.to_i.between?(200, 299)
 
     format_response(retrieve_data.parsed_response)
   end

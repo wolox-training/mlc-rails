@@ -8,8 +8,7 @@ class BooksController < ApiController
   end
 
   def open_library_book
-    isbn = params[:isbn]
-    render json: OpenLibraryService.new(isbn).book_info, status: :ok
+    render json: OpenLibraryService.new(params[:isbn]).book_info
   rescue StandardError => e
     render json: { errors: e.message }, status: :unprocessable_entity
   end

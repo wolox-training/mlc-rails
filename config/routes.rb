@@ -5,10 +5,9 @@ Rails.application.routes.draw do
 	mount Sidekiq::Web => '/sidekiq'
 	
 	mount_devise_token_auth_for 'User', at: 'auth'
-	resources :books, only: [:index, :show, :open_library_book]
+	resources :books, only: [:index, :show]
 	resources :rents, only: [:index, :create]
 	resources :book_suggestions, only: [:create]
 
 	get 'open_library_book/:isbn', to: 'books#open_library_book', as: :open_library_book
-
 end
