@@ -2,7 +2,7 @@
   - default
   - mailers
 
-# :schedule:
-#     daily_email:
-#       cron: '0 0 0 * * *' # Runs once per day I guess. At 9am GMT-3 should it be 0 0 9??
-#       class: UserMailer
+:schedule:
+    daily_email:
+      cron: '0 0 9 * * *'
+      class: UserMailer
